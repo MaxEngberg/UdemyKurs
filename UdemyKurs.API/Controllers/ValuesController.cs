@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UdemyKurs.API.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UdemyKurs.API.Controllers
 {
@@ -20,6 +21,7 @@ namespace UdemyKurs.API.Controllers
         }
 
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
